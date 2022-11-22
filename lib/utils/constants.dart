@@ -8,8 +8,8 @@ const String fahrenheit = 'F';
 const String degree = '\u00B0';
 const String iconPrefix = 'https://openweathermap.org/img/wn/';
 const String iconSuffix = '@2x.png';
-
-
+const String timePattern12 = 'hh:mm a';
+const String timePattern24 = 'HH:mm';
 
 const cities = [
   'Athens',
@@ -18,6 +18,7 @@ const cities = [
   'Berlin',
   'Capetown',
   'Dhaka',
+  'Doha',
   'Dublin',
   'Dubai',
   'Faridpur',
@@ -30,6 +31,7 @@ const cities = [
   'Kualalampur',
   'London',
   'Milan',
+  'Moscow',
   'New York',
   'Oslo',
   'Paris',
@@ -38,3 +40,25 @@ const cities = [
   'Sydney',
   'Tongi',
 ];
+
+const txtTempBig80 = TextStyle(
+  fontSize: 80,
+  color: Colors.white,
+);
+const txtTempSmall18 = TextStyle(
+  fontSize: 18,
+  color: Colors.white,
+);
+const txtAddressWhite24 = TextStyle(
+  fontSize: 24,
+  color: Colors.white,
+  letterSpacing: 1.5,
+);
+const txtNormalWhite16 = TextStyle(
+  fontSize: 16,
+  color: Colors.white,
+);
+const txtNormal16White54 = TextStyle(
+  fontSize: 16,
+  color: Colors.white54,
+);

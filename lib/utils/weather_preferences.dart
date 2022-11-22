@@ -1,8 +1,8 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-const String prefUnit = 'Unit';
-const String prefTimeFormat = 'TimeFormat';
-const String prefDefaultCity = 'DefaultCity';
+const String tempUnitKey = 'tempUnit';
+const String timeFormatKey = 'timeFormat';
+const String defaultCityKey = 'defaultCity';
 
 Future<bool> setBool(String key, bool status) async {
   final pref = await SharedPreferences.getInstance();
