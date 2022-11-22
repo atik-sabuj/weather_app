@@ -9,24 +9,32 @@ const String degree = '\u00B0';
 const String iconPrefix = 'https://openweathermap.org/img/wn/';
 const String iconSuffix = '@2x.png';
 
-const txtTempBig80 = TextStyle(
-  fontSize: 80,
-  color: Colors.white,
-);
-const txtTempSmall18 = TextStyle(
-  fontSize: 18,
-  color: Colors.white,
-);
-const txtAddressWhite24 = TextStyle(
-  fontSize: 24,
-  color: Colors.white,
-  letterSpacing: 1.5,
-);
-const txtNormalWhite16 = TextStyle(
-  fontSize: 16,
-  color: Colors.white,
-);
-const txtNormal16White54 = TextStyle(
-  fontSize: 16,
-  color: Colors.white54,
-);
+
+
+const cities = [
+  'Athens',
+  'Barishal',
+  'Bangalore',
+  'Berlin',
+  'Capetown',
+  'Dhaka',
+  'Dublin',
+  'Dubai',
+  'Faridpur',
+  'Gopalgonj',
+  'Hobigonj',
+  'Istanbul',
+  'Jakarta',
+  'Jamalpur',
+  'Keranigonj',
+  'Kualalampur',
+  'London',
+  'Milan',
+  'New York',
+  'Oslo',
+  'Paris',
+  'Riadh',
+  'Rome',
+  'Sydney',
+  'Tongi',
+];

@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:weather_app_08/utils/weather_preferences.dart';
+
+import '../provider/weather_provider.dart';
 
 class SettingsPage extends StatefulWidget {
   static const String routeName = '/settings';
+
   const SettingsPage({Key? key}) : super(key: key);
 
   @override
@@ -9,49 +14,49 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
-  bool isTempUnitSwitchedOn = false;
-  bool is24HourFormat = false;
-  bool isDefaultCity = false;
+  bool tempUnitStatus = false;
+  bool is24Hour = false;
+
+  @override
+  void initState() {
+    getBool(prefUnit).then((value) {
+      setState(() {
+        tempUnitStatus = value;
+      });
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Settings'),
-      ),
+      appBar: AppBar(title: const Text('Settings')),
       body: ListView(
         padding: const EdgeInsets.all(8),
         children: [
           SwitchListTile(
-            value: isTempUnitSwitchedOn,
-            onChanged: (value) {
+            value: tempUnitStatus,
+            onChanged: (value) async {
               setState(() {
-                isTempUnitSwitchedOn = value;
+                tempUnitStatus = value;
               });
+              await setBool(prefUnit, value);
+              context.read<WeatherProvider>().setTempUnit(value);
             },
             title: const Text('Show temperature in Fahrenheit'),
             subtitle: const Text('Default is Celsius'),
           ),
           SwitchListTile(
-            value: is24HourFormat,
-            onChanged: (value) {
+            value: is24Hour,
+            onChanged: (value) async {
               setState(() {
-                is24HourFormat = value;
+                is24Hour = value;
               });
+              await setBool(prefTimeFormat, value);
             },
             title: const Text('Show time in 24 hour format'),
             subtitle: const Text('Default is 12 hour'),
-          ),
-          SwitchListTile(
-            value: isDefaultCity,
-            onChanged: (value) {
-              setState(() {
-                isDefaultCity = value;
-              });
-            },
-            title: const Text('Set current city as default'),
-            subtitle: const Text(
-                'Your location will no longer be detected. Data will be shown based on default city location'),
-          ),
+          )
         ],
       ),
     );

@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:weather_app_08/pages/home_page.dart';
-import 'package:weather_app_08/pages/settings_page.dart';
 import 'package:weather_app_08/provider/weather_provider.dart';
+
+import 'pages/settings_page.dart';
 
 void main() {
   runApp(MultiProvider(providers: [
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        textTheme: GoogleFonts.merriweatherSansTextTheme(),
+        textTheme: GoogleFonts.merriweatherTextTheme(),
         primarySwatch: Colors.blue,
       ),
       initialRoute: HomePage.routeName,
