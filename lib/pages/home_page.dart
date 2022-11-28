@@ -164,7 +164,7 @@ class _HomePageState extends State<HomePage> {
                   style: txtNormal16White54,
                 ),
                 Text(
-                  'Wind ${current.wind!.speed} m/s  ',
+                  'Wind ${current.wind!.speed} km/h  ',
                   style: txtNormal16White54,
                 ),
                 Text(
