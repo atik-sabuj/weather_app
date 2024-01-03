@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-const String weatherApiKey = 'b51a561936b869bad59234c36dd69284';
+//API CALL(OWN API)
+const String weatherApiKey = 'WRITE HERE YOUR OWN WEATHER API';
+
 const String metric = 'metric';
 const String imperial = 'imperial';
 const String celsius = 'C';
